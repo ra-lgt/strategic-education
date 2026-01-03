@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactRequestSchema, type InsertContactRequest } from "@shared/schema";
-import { useCreateContactRequest } from "@/hooks/use-contact";
+import { z } from "zod";
 import {
   Dialog,
   DialogContent,
@@ -22,7 +21,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Loader2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+const insertContactRequestSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email"),
+  message: z.string().optional(),
+});
+
+type InsertContactRequest = z.infer<typeof insertContactRequestSchema>;
 
 interface ContactDialogProps {
   children: React.ReactNode;
@@ -30,7 +37,7 @@ interface ContactDialogProps {
 
 export function ContactDialog({ children }: ContactDialogProps) {
   const [open, setOpen] = useState(false);
-  const mutation = useCreateContactRequest();
+  // const mutation = useCreateContactRequest();
 
   const form = useForm<InsertContactRequest>({
     resolver: zodResolver(insertContactRequestSchema),
@@ -42,12 +49,15 @@ export function ContactDialog({ children }: ContactDialogProps) {
   });
 
   function onSubmit(data: InsertContactRequest) {
-    mutation.mutate(data, {
-      onSuccess: () => {
-        setOpen(false);
-        form.reset();
-      },
-    });
+    // Backend call commented out
+    // mutation.mutate(data, {
+    //   onSuccess: () => {
+    //     setOpen(false);
+    //     form.reset();
+    //   },
+    // });
+    setOpen(false);
+    form.reset();
   }
 
   return (
@@ -112,20 +122,10 @@ export function ContactDialog({ children }: ContactDialogProps) {
 
             <Button 
               type="submit" 
-              className="w-full h-12 text-lg font-medium" 
-              disabled={mutation.isPending}
+              className="w-full h-12 text-lg font-medium"
             >
-              {mutation.isPending ? (
-                <>
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                <>
-                  Request Conversation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </>
-              )}
+              Request Conversation
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </form>
         </Form>

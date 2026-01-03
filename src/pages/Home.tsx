@@ -54,11 +54,11 @@ export default function Home() {
               A practical 30-day strategic upgrade for mid-career professionals who feel underpaid and under-positioned.
             </p>
             
-            <ContactDialog>
+            {/* <ContactDialog>
               <Button size="lg" className="text-lg px-8 py-6 h-auto shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
                 Book a Conversation
               </Button>
-            </ContactDialog>
+            </ContactDialog> */}
           </motion.div>
         </motion.div>
       </section>
@@ -167,11 +167,11 @@ export default function Home() {
           Stop waiting for permission to be strategic. The market pays for value, not tenure.
         </p>
         
-        <ContactDialog>
+        {/* <ContactDialog>
           <Button size="lg" className="text-lg px-10 py-8 h-auto shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all">
             Book a Conversation
           </Button>
-        </ContactDialog>
+        </ContactDialog> */}
       </section>
     </Layout>
   );
