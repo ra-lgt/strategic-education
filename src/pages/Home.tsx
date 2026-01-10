@@ -163,7 +163,7 @@ export default function Home() {
         </p>
         
           <Button size="lg" className="text-lg px-10 py-8 h-auto shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all">
-            Book a Conversation
+            Continue with video
           </Button>
       </section>
     </Layout>
