@@ -154,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="py-24 md:py-32 flex flex-col items-center text-center gap-8 border-t border-border bg-gradient-to-b from-transparent to-muted/30">
+      <section className="py-4 md:py-7 flex flex-col items-center text-center gap-8 border-t border-border bg-gradient-to-b from-transparent to-muted/30">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
           Strategic leverage begins with clarity.
         </h2>
