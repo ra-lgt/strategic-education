@@ -53,16 +53,13 @@ export default function Home() {
             <p className="text-base md:text-lg text-muted-foreground max-w-xl border-l-2 border-primary pl-4">
               A practical 30-day strategic upgrade for mid-career professionals who feel underpaid and under-positioned.
             </p>
-            
-              <Button size="lg" className="text-lg px-8 py-6 h-auto shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
-                Book a Conversation
-              </Button>
+          
           </motion.div>
         </motion.div>
       </section>
 
       {/* WHO THIS IS FOR */}
-      <section className="py-16 md:py-24 border-t border-border">
+      <section className="py-6 md:py-10 border-t border-border">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sticky top-8">
